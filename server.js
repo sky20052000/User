@@ -21,7 +21,7 @@ mongoose.connect(config.MONGO_URL).then((data)=>{
 
 // routes
 app.use("/users", require("./routes/users"));
-const port = config.PORT;
+const port = process.env.PORT || 5001;
 app.listen(port,()=>{
     console.log(`server running on the:${port}`);
 });
