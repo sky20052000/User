@@ -153,6 +153,21 @@ update_password:async(req,res)=>{
        }
 },
 
+// getdata
+getUser:async(req,res)=>{
+  try{
+    console.log(req.body);
+    const user = await User.find();
+    if (!user) {
+        return res.status(400).json({ msg: "user does not exist" });
+    }
+    res.status(200).json(user);
+  }catch(err){
+      return res.status(500).json({msg:err.message});
+  }
+},
+
+
 // change password
 change_password:async(req,res)=>{
     try {

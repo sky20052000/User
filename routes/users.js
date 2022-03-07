@@ -16,4 +16,6 @@ router.post("/logout",userController.logout);
 router.post("/update-password", userController.update_password);
 // change password
 router.post("/change-password", userController.change_password)
+// getUser data
+router.get("/userData",userController.getUser)
 module.exports = router;
